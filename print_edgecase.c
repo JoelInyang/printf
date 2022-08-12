@@ -1,8 +1,10 @@
 #include "main.h"
 
-/****************** PRINT POINTER ******************/
+/********************* PRINT POINTER *********************/
 /**
  * print_pointer - Prints the value of a pointer variable
+ * to the
+ * standard output
  * @types: List a of arguments
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags
@@ -73,9 +75,9 @@ int print_non_printable(va_list types, char buffer[],
 	UNUSED(width);
 	UNUSED(precision);
 	UNUSED(size);
-	if (str == NULL)	
-		return (write(1, "(null)", 6));
 
+	if (str == NULL)
+		return (write(1, "(null)", 6));
 
 	while (str[i] != '\0')
 	{
@@ -135,7 +137,7 @@ int print_reverse(va_list types, char buffer[],
 	}
 	return (count);
 }
-/************************* PRINT A STRING IN ROT13 ************************/
+/************************* PRINT A STRING IN ROT13 *************************/
 /**
  * print_rot13string - Print a string in rot13.
  * @types: Lista of arguments
@@ -155,8 +157,8 @@ int print_rot13string(va_list types, char buffer[],
 	int count = 0;
 	char in[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char out[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	str = va_arg(types, char *);
 
+	str = va_arg(types, char *);
 	UNUSED(buffer);
 	UNUSED(flags);
 	UNUSED(width);

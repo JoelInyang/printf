@@ -1,14 +1,16 @@
 #include "main.h"
 
-/*********************** PRINT UNSIGNED NUMBER *************************/
+/************************* PRINT UNSIGNED NUMBER *************************/
 /**
  * print_unsigned - Prints an unsigned number
+ * to the
+ * standard output
  * @types: List a of arguments
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags
- * @width: get widt
- * @precision: Precision specificatio
- * @size: Size specifie
+ * @width: get width
+ * @precision: Precision specification
+ * @size: Size specifier
  * Return: Number of chars printed.
  */
 int print_unsigned(va_list types, char buffer[],
@@ -20,7 +22,6 @@ int print_unsigned(va_list types, char buffer[],
 	num = convert_size_unsgnd(num, size);
 
 	if (num == 0)
-
 		buffer[i--] = '0';
 
 	buffer[BUFF_SIZE - 1] = '\0';
@@ -32,6 +33,7 @@ int print_unsigned(va_list types, char buffer[],
 	}
 
 	i++;
+
 	return (write_unsgnd(0, i, buffer, flags, width, precision, size));
 }
 
@@ -47,7 +49,6 @@ int print_unsigned(va_list types, char buffer[],
  * Return: Number of chars printed
  */
 int print_octal(va_list types, char buffer[],
-
 	int flags, int width, int precision, int size)
 {
 
@@ -72,6 +73,7 @@ int print_octal(va_list types, char buffer[],
 
 	if (flags & F_HASH && init_num != 0)
 		buffer[i--] = '0';
+
 	i++;
 
 	return (write_unsgnd(0, i, buffer, flags, width, precision, size));
@@ -104,7 +106,7 @@ int print_hexadecimal(va_list types, char buffer[],
  * @width: get width
  * @precision: Precision specification
  * @size: Size specifier
- * Return: Number of chars print
+ * Return: Number of chars printed
  */
 int print_hexa_upper(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
@@ -112,6 +114,7 @@ int print_hexa_upper(va_list types, char buffer[],
 	return (print_hexa(types, "0123456789ABCDEF", buffer,
 		flags, 'X', width, precision, size));
 }
+
 /************** PRINT HEXX NUM IN LOWER OR UPPER **************/
 /**
  * print_hexa - Prints a hexadecimal number in lower or upper
@@ -134,10 +137,12 @@ int print_hexa(va_list types, char map_to[], char buffer[],
 	unsigned long int init_num = num;
 
 	UNUSED(width);
+
 	num = convert_size_unsgnd(num, size);
 
 	if (num == 0)
 		buffer[i--] = '0';
+
 	buffer[BUFF_SIZE - 1] = '\0';
 
 	while (num > 0)
@@ -145,11 +150,13 @@ int print_hexa(va_list types, char map_to[], char buffer[],
 		buffer[i--] = map_to[num % 16];
 		num /= 16;
 	}
+
 	if (flags & F_HASH && init_num != 0)
 	{
 		buffer[i--] = flag_ch;
 		buffer[i--] = '0';
 	}
+
 	i++;
 
 	return (write_unsgnd(0, i, buffer, flags, width, precision, size));
