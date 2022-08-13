@@ -1,1 +1,1 @@
-This is the README for first collaboration printf project between Joel and Kennedy. This project is used to test our ability to collaborate as Programmers. The experience is fun. C is fun
+This is the README for first collaboration printf project between Joel and Kennedy. This project is used to test our ability to collaborate as Programmers. The experience is fun. C is fun!
