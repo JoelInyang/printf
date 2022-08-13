@@ -1,1 +1,1 @@
-This is a README the first collaboration for printf project between Joel and Kennedy
+This is the README for first collaboration printf project between Joel and Kennedy
