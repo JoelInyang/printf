@@ -1,1 +1,1 @@
-This is a collaboration for printf project for Joel and Kennedy
+This is the first collaboration for printf project between Joel and Kennedy
